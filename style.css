@@ -74,6 +74,23 @@ body {
   padding: 8px;
 }
 
+.btn-close {
+  margin-top: 12px;
+  padding: 8px;
+  color: var(--first-color);
+  background-color: var(--second-color);
+  border-radius: 4px;
+  border: 1px solid var(--first-color);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-close:hover {
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border: 1px solid var(--second-color);
+}
+
 .title {
   font-size: 48px;
   margin-bottom: 18px;
@@ -93,6 +110,10 @@ body {
   align-items: center;
   font-size: 62px;
   margin-bottom: 8px;
+}
+
+.sign {
+  text-align: center;
 }
 
 .start-section {
@@ -182,7 +203,7 @@ body {
   font-size: 44px;
 }
 
-.change-name {
+.btn-change-name {
   border: 1px solid var(--first-color);
   color: var(--first-color);
   background: transparent;

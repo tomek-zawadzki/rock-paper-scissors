@@ -41,6 +41,7 @@
             Scissors beats Paper and is beaten by Rock
           </p>
         </div>
+        <button class="btn-close">Close</button>
       </section>
 
       <section class="start-section">
@@ -52,24 +53,31 @@
       <section class="result">
         <div class="player-box">
           <h2 class="player">Player 1</h2>
-          <button class="change-name">change name</button>
+          <button class="btn-change-name">change name</button>
           <p class="score score-one">0</p>
         </div>
         <p class="vs">vs</p>
         <div class="player-box">
           <h2 class="player">Player 2</h2>
-          <button class="change-name">change name</button>
+          <button class="btn-change-name">change name</button>
           <p class="score score-two">0</p>
         </div>
       </section>
 
+      <div class="change-name">
+        <label for="new-name">Enter new player name:</label>
+        <input type="text" id="new-name" placeholder="Player 1" />
+      </div>
+
       <div class="signs">
-        <p class="paper sign"><i class="fa-regular fa-hand"></i> Paper</p>
+        <p class="paper sign">
+          <i class="fa-regular fa-hand"></i><span>Paper</span>
+        </p>
         <p class="rock sign">
-          <i class="fa-regular fa-hand-back-fist"></i> Rock
+          <i class="fa-regular fa-hand-back-fist"></i><span>Rock</span>
         </p>
         <p class="scissors sign">
-          <i class="fa-regular fa-hand-scissors"></i> Scissors
+          <i class="fa-regular fa-hand-scissors"></i><span>Scissors</span>
         </p>
       </div>
     </div>
@@ -77,7 +85,7 @@
       <h3 class="title-choice-p1">Player One</h3>
       <div class="buttons-choice">
         <button class="paper-btn">
-          <i class="fa-regular fa-hand-scissors"></i> Paper
+          <i class="fa-regular fa-hand"></i> Paper
         </button>
         <button class="rock-btn">
           <i class="fa-regular fa-hand-back-fist"></i> Rock
