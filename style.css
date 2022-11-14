@@ -215,7 +215,45 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.change-name:hover {
+.btn-change-name:hover {
   background-color: var(--first-color);
   color: var(--second-color);
+}
+
+.change-name {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--first-color);
+  color: var(--second-color);
+  width: 250px;
+  height: 150px;
+  padding: 12px;
+  font-size: 26px;
+  border-radius: 12px;
+}
+
+.change-name input {
+  width: 160px;
+  margin-top: 12px;
+  height: 32px;
+  padding: 0 6px;
+  font-size: 18px;
+}
+
+.change-name input::placeholder {
+  color: rgb(183, 175, 175);
+}
+
+.btn-close-chn {
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--first-color);
+  border: none;
+  cursor: pointer;
 }
