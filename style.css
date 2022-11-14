@@ -16,7 +16,6 @@ body {
   flex-direction: column;
   height: 100vh;
   font-family: sans-serif;
-  position: relative;
   background-color: var(--second-color);
   color: var(--first-color);
 }
@@ -40,6 +39,7 @@ body {
   border-radius: 50%;
   font-size: 24px;
   transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 .show-instruction:hover {
@@ -49,7 +49,29 @@ body {
 
 .popup-instruction {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--first-color);
+  color: var(--second-color);
+  width: 75%;
+  height: 50%;
+  border-radius: 12px;
+}
+
+.popup-instruction h2 {
+  margin-bottom: 22px;
+}
+
+.sign-instruction {
+  display: flex;
+  gap: 8px;
+  font-size: 18px;
+  padding: 8px;
 }
 
 .title {
@@ -98,6 +120,49 @@ body {
 .player1-choice,
 .player2-choice {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border-radius: 12px;
+  height: 500px;
+  width: 700px;
+}
+
+.title-choice-p1,
+.title-choice-p2 {
+  font-size: 32px;
+  margin-bottom: 62px;
+}
+
+.buttons-choice {
+  display: flex;
+  gap: 18px;
+}
+
+.choice-btn {
+  width: 200px;
+  height: 200px;
+  color: var(--second-color);
+  border: 4px solid var(--second-color);
+  border-radius: 12px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.choice-btn:hover {
+  color: var(--first-color);
+  background-color: var(--second-color);
+}
+
+.choice-btn p {
+  font-size: 76px;
 }
 
 .result {
