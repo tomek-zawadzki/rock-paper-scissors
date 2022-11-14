@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <script defer src="app.js"></script>
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/aee95fd16a.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="game-box">
+      <div class="header">
+        <h1 class="title">ROCK PAPER SCISSORS GAME</h1>
+      </div>
+      <div class="popup-instruction active">
+        <div class="sign-instruction">
+          <div class="sign-info">
+            <p class="paper sign"><i class="fa-regular fa-hand"></i> Paper</p>
+            <p class="paper-info">Paper beats Rock and is beaten by Scissors</p>
+          </div>
+          <div class="sign-instruction">
+            <p class="rock sign">
+              <i class="fa-regular fa-hand-back-fist"></i> Rock
+            </p>
+            <p class="rock-info">Rock beats Scissors and is beaten by Paper</p>
+          </div>
+          <div class="sign-instruction">
+            <p class="scissors sign">
+              <i class="fa-regular fa-hand-scissors"></i> Scissors
+            </p>
+            <p class="scissors-info">
+              Scissors beats Paper and is beaten by Rock
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="sign-info">
+        <div class="signs">
+          <div class="sign-info">
+            <p class="paper sign"><i class="fa-regular fa-hand"></i> Paper</p>
+          </div>
+          <div class="sign-info">
+            <p class="rock sign">
+              <i class="fa-regular fa-hand-back-fist"></i> Rock
+            </p>
+          </div>
+          <p class="scissors sign">
+            <i class="fa-regular fa-hand-scissors"></i> Scissors
+          </p>
+        </div>
+        <div class="start">
+          <button class="start">New Game</button>
+          <button class="Restart Game">Restart Game</button>
+        </div>
+        <div class="result">
+          <div class="player-box">
+            <h2 class="player">Player 1</h2>
+            <button class="change-name">change name</button>
+            <p class="score score-one">0</p>
+          </div>
+          <p class="vs">vs</p>
+          <div class="player-box">
+            <h2 class="player">Player 2</h2>
+            <button class="change-name">change name</button>
+            <p class="score score-two">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
