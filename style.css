@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+:root {
+  --first-color: rgb(238, 229, 229);
+  --second-color: #302b63;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -11,4 +16,120 @@ body {
   flex-direction: column;
   height: 100vh;
   font-family: sans-serif;
+  position: relative;
+  background-color: var(--second-color);
+  color: var(--first-color);
+}
+
+.game-box {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 18px;
+}
+
+.show-instruction {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 42px;
+  height: 42px;
+  color: var(--first-color);
+  background: transparent;
+  border: 1px solid var(--first-color);
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.show-instruction:hover {
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+.popup-instruction {
+  display: none;
+  position: absolute;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+
+.signs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+}
+
+.sign i {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 62px;
+  margin-bottom: 8px;
+}
+
+.start-section {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.btn {
+  border: 1px solid var(--first-color);
+  color: var(--first-color);
+  background: transparent;
+  padding: 6px;
+  width: 100px;
+  border-radius: 6px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--first-color);
+  color: var(--second-color);
+}
+
+.player1-choice,
+.player2-choice {
+  display: none;
+}
+
+.result {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 500px;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.score {
+  font-size: 82px;
+}
+
+.vs {
+  font-size: 44px;
+}
+
+.change-name {
+  border: 1px solid var(--first-color);
+  color: var(--first-color);
+  background: transparent;
+  font-size: 10px;
+  padding: 6px;
+  border-radius: 6px;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.change-name:hover {
+  background-color: var(--first-color);
+  color: var(--second-color);
 }
