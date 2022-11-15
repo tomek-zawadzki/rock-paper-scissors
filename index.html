@@ -14,14 +14,14 @@
   </head>
   <body>
     <header class="header">
-      <h1 class="title">ROCK PAPER SCISSORS GAME</h1>
+      <h1 class="title">ROCK - PAPER - SCISSORS <span>GAME</span></h1>
     </header>
 
     <div class="game-box">
       <button class="show-instruction">
         <i class="fa-solid fa-info"></i>
       </button>
-      <section class="popup-instruction active">
+      <section class="popup-instruction">
         <h2>Instruction</h2>
         <div class="sign-instruction">
           <p class="paper sign-ins"><i class="fa-regular fa-hand"></i></p>
@@ -53,22 +53,23 @@
       <section class="result">
         <div class="player-box">
           <h2 class="player-one">Player 1</h2>
-          <button class="btn-change-name">change name</button>
+          <!-- <button class="btn-change-name">change name</button> -->
           <p class="score score-one">0</p>
         </div>
         <p class="vs">vs</p>
         <div class="player-box">
           <h2 class="player-two">Player 2</h2>
-          <button class="btn-change-name">change name</button>
+          <!-- <button class="btn-change-name">change name</button> -->
           <p class="score score-two">0</p>
         </div>
       </section>
 
-      <div class="change-name">
+      <!-- <div class="change-name">
         <button class="btn-close-chn">X</button>
         <label for="new-name">Enter new name:</label>
         <input type="text" id="new-name" placeholder="Player 1" />
-      </div>
+        <button class="set-name">Set</button>
+      </div> -->
 
       <div class="signs">
         <p class="paper sign">
@@ -85,14 +86,17 @@
     <div class="player1-choice">
       <h3 class="title-choice-p1">Player One</h3>
       <div class="buttons-choice">
-        <button class="paper-btn">
-          <i class="fa-regular fa-hand"></i> Paper
+        <button class="choice-btn paper-btn">
+          <p><i class="fa-regular fa-hand"></i></p>
+          Paper
         </button>
-        <button class="rock-btn">
-          <i class="fa-regular fa-hand-back-fist"></i> Rock
+        <button class="choice-btn rock-btn">
+          <p><i class="fa-regular fa-hand-back-fist"></i></p>
+          Rock
         </button>
-        <button class="scissors-btn">
-          <i class="fa-regular fa-hand-scissors"></i> Scissors
+        <button class="choice-btn scissors-btn">
+          <p><i class="fa-regular fa-hand-scissors"></i></p>
+          Scissors
         </button>
       </div>
     </div>
