@@ -120,7 +120,8 @@ main {
   border: none;
 }
 
-.btn-choice {
+.btn-choice-p1,
+.btn-choice-p2 {
   width: 80px;
   height: 80px;
   font-size: 14px;
@@ -130,12 +131,13 @@ main {
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
-.btn-choice:hover {
+.btn-choice-p1:hover,
+.btn-choice-p2:hover {
   background-color: var(--second-color);
   color: var(--first-color);
   border: 1px solid var(--first-color);
 }
-
-.btn-choice i {
+.btn-choice-p1 i,
+.btn-choice-p2 i {
   font-size: 28px;
 }
