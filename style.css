@@ -32,6 +32,82 @@ body {
   align-items: center;
 }
 
+.info-box {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+.btn-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  padding: 12px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  color: var(--second-color);
+  background-color: var(--first-color);
+  border: 1px solid var(--second-color);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.btn-info:hover {
+  background-color: var(--second-color);
+  border: 1px solid var(--first-color);
+  color: var(--first-color);
+}
+
+.popup-info {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: var(--second-color);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.popup-info h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sign-info {
+  display: flex;
+  margin-bottom: 8px;
+}
+.btn-close-box {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-close {
+  margin-top: 12px;
+  width: 100px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--second-color);
+  color: var(--first-color);
+  background-color: var(--second-color);
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background-color: var(--first-color);
+  border: 1px solid var(--second-color);
+  color: var(--second-color);
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -64,6 +140,7 @@ main {
   background-color: var(--first-color);
   color: var(--second-color);
   border: 1px solid var(--second-color);
+  cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
@@ -93,7 +170,7 @@ main {
 }
 
 .choice {
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
   background-color: var(--first-color);
@@ -159,6 +236,7 @@ main {
   border: 1px solid var(--second-color);
   border-radius: 4px;
   color: var(--second-color);
+  cursor: pointer;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 

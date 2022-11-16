@@ -7,8 +7,9 @@ const inputP1 = document.querySelector(".input-p1");
 const inputP2 = document.querySelector(".input-p2");
 const scoreP1 = document.querySelector(".score-p1");
 const scoreP2 = document.querySelector(".score-p2");
-
-console.log(scoreP1.textContent);
+const popupInfo = document.querySelector(".popup-info");
+const showPopupBtn = document.querySelector(".btn-info");
+const hidePopupBtn = document.querySelector(".btn-close");
 
 const playerOne = {
   choice: "",
@@ -16,6 +17,16 @@ const playerOne = {
 const playerTwo = {
   choice: "",
 };
+
+const showPopupFnt = () => {
+  popupInfo.style.display = "flex";
+};
+const hidePopupFnt = () => {
+  popupInfo.style.display = "none";
+};
+
+showPopupBtn.addEventListener("click", showPopupFnt);
+hidePopupBtn.addEventListener("click", hidePopupFnt);
 
 const showPlayerChoice = () => {
   choicePanel.style.display = "flex";
