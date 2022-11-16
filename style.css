@@ -93,15 +93,18 @@ main {
 }
 
 .choice {
-  display: none;
-  justify-content: space-around;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: var(--first-color);
   color: var(--second-color);
   border-radius: 18px;
   width: 600px;
   height: 600px;
+}
+
+.players {
+  display: flex;
 }
 
 .player1,
@@ -114,10 +117,38 @@ main {
   width: 100%;
   border-right: 2px solid var(--second-color);
   font-size: 24px;
+  margin-top: 24px;
 }
 
 .player2 {
   border: none;
+}
+
+.score-p1,
+.score-p2 {
+  font-size: 86px;
+}
+
+.show-result-box {
+  display: flex;
+  justify-content: center;
+}
+
+.show-result {
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--second-color);
+  color: var(--first-color);
+  border: 1px solid var(--second-color);
+  margin-top: 16px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.show-result:hover {
+  background-color: var(--first-color);
+  color: var(--second-color);
+  border: 1px solid var(--second-color);
 }
 
 .btn-choice-p1,

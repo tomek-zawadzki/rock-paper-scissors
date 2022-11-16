@@ -5,6 +5,11 @@ const btnChoiceP2 = document.querySelectorAll(".btn-choice-p2");
 const showResult = document.querySelector(".show-result");
 const inputP1 = document.querySelector(".input-p1");
 const inputP2 = document.querySelector(".input-p2");
+const scoreP1 = document.querySelector(".score-p1");
+const scoreP2 = document.querySelector(".score-p2");
+
+console.log(scoreP1.textContent);
+
 const playerOne = {
   choice: "",
 };
@@ -36,16 +41,22 @@ btnChoiceP2.forEach((e) => {
 
 const result = () => {
   if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
+    scoreP1.textContent++;
     return console.log("Player 1 won!");
   } else if (playerOne.choice === "paper" && playerTwo.choice === "scissors") {
+    scoreP2.textContent++;
     return console.log("Player 2 won!");
   } else if (playerOne.choice === "paper" && playerTwo.choice === "rock") {
+    scoreP1.textContent++;
     return console.log("Player 1 won!");
   } else if (playerOne.choice === "rock" && playerTwo.choice === "paper") {
+    scoreP2.textContent++;
     return console.log("Player 2 won!");
   } else if (playerOne.choice === "rock" && playerTwo.choice === "scissors") {
+    scoreP1.textContent++;
     return console.log("Player 1 won!");
   } else if (playerTwo.choice === "rock" && playerOne.choice === "scissors") {
+    scoreP2.textContent++;
     return console.log("Player 2 won!");
   } else {
     return console.log("Draw!");
