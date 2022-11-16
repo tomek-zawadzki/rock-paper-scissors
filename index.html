@@ -17,105 +17,22 @@
       <h1 class="title">ROCK - PAPER - SCISSORS <span>GAME</span></h1>
     </header>
 
-    <div class="game-box">
-      <button class="show-instruction">
-        <i class="fa-solid fa-info"></i>
-      </button>
-      <section class="popup-instruction">
-        <h2>Instruction</h2>
-        <div class="sign-instruction">
-          <p class="paper sign-ins"><i class="fa-regular fa-hand"></i></p>
-          <p class="paper-info">Paper beats Rock and is beaten by Scissors</p>
-        </div>
-        <div class="sign-instruction">
-          <p class="rock sign-ins">
-            <i class="fa-regular fa-hand-back-fist"></i>
+    <main>
+      <section class="invitation">
+        <h2 class="invitation__heading">Let's play!</h2>
+        <button class="btn start">Start game</button>
+        <div class="signs">
+          <p class="signs__icon">
+            <i class="fa-regular fa-hand"></i><span>Paper</span>
           </p>
-          <p class="rock-info">Rock beats Scissors and is beaten by Paper</p>
-        </div>
-        <div class="sign-instruction">
-          <p class="scissors sign-ins">
-            <i class="fa-regular fa-hand-scissors"></i>
+          <p class="signs__icon">
+            <i class="fa-regular fa-hand-back-fist"></i><span>Rock</span>
           </p>
-          <p class="scissors-info">
-            Scissors beats Paper and is beaten by Rock
+          <p class="signs__icon">
+            <i class="fa-regular fa-hand-scissors"></i><span>Scissors</span>
           </p>
         </div>
-        <button class="btn-close">Close</button>
       </section>
-
-      <section class="start-section">
-        <h2>Let's play!</h2>
-        <button class="btn start">New Game</button>
-        <button class="btn restart">Restart Game</button>
-      </section>
-
-      <section class="result">
-        <div class="player-box">
-          <h2 class="player-one">Player 1</h2>
-          <!-- <button class="btn-change-name">change name</button> -->
-          <p class="score score-one">0</p>
-        </div>
-        <p class="vs">vs</p>
-        <div class="player-box">
-          <h2 class="player-two">Player 2</h2>
-          <!-- <button class="btn-change-name">change name</button> -->
-          <p class="score score-two">0</p>
-        </div>
-      </section>
-
-      <!-- <div class="change-name">
-        <button class="btn-close-chn">X</button>
-        <label for="new-name">Enter new name:</label>
-        <input type="text" id="new-name" placeholder="Player 1" />
-        <button class="set-name">Set</button>
-      </div> -->
-
-      <div class="signs">
-        <p class="paper sign">
-          <i class="fa-regular fa-hand"></i><span>Paper</span>
-        </p>
-        <p class="rock sign">
-          <i class="fa-regular fa-hand-back-fist"></i><span>Rock</span>
-        </p>
-        <p class="scissors sign">
-          <i class="fa-regular fa-hand-scissors"></i><span>Scissors</span>
-        </p>
-      </div>
-    </div>
-    <div class="player1-choice">
-      <h3 class="title-choice-p1">Player One</h3>
-      <div class="buttons-choice">
-        <button class="choice-btn paper-btn">
-          <p><i class="fa-regular fa-hand"></i></p>
-          Paper
-        </button>
-        <button class="choice-btn rock-btn">
-          <p><i class="fa-regular fa-hand-back-fist"></i></p>
-          Rock
-        </button>
-        <button class="choice-btn scissors-btn">
-          <p><i class="fa-regular fa-hand-scissors"></i></p>
-          Scissors
-        </button>
-      </div>
-    </div>
-    <div class="player2-choice">
-      <h3 class="title-choice-p2">Player Two</h3>
-      <div class="buttons-choice">
-        <button class="choice-btn paper-btn">
-          <p><i class="fa-regular fa-hand"></i></p>
-          <span>Paper</span>
-        </button>
-        <button class="choice-btn rock-btn">
-          <p><i class="fa-regular fa-hand-back-fist"></i></p>
-          <span>Rock</span>
-        </button>
-        <button class="choice-btn scissors-btn">
-          <p><i class="fa-regular fa-hand-scissors"></i></p>
-          <span>Scissors</span>
-        </button>
-      </div>
-    </div>
+    </main>
   </body>
 </html>
