@@ -10,6 +10,9 @@ const scoreP2 = document.querySelector(".score-p2");
 const popupInfo = document.querySelector(".popup-info");
 const showPopupBtn = document.querySelector(".btn-info");
 const hidePopupBtn = document.querySelector(".btn-close");
+const boxForResults = document.querySelector(".box-for-results");
+
+let winnnerText = "";
 
 const playerOne = {
   choice: "",
@@ -25,14 +28,9 @@ const hidePopupFnt = () => {
   popupInfo.style.display = "none";
 };
 
-showPopupBtn.addEventListener("click", showPopupFnt);
-hidePopupBtn.addEventListener("click", hidePopupFnt);
-
 const showPlayerChoice = () => {
   choicePanel.style.display = "flex";
 };
-
-startBtn.addEventListener("click", showPlayerChoice);
 
 btnChoiceP1.forEach((e) => {
   e.addEventListener("click", () => {
@@ -50,28 +48,45 @@ btnChoiceP2.forEach((e) => {
   });
 });
 
+const showWinnerText = (text) => {
+  const p = document.createElement("p");
+  p.innerHTML = `The winner is ${text}! 💥💥💥`;
+  boxForResults.appendChild(p);
+};
+
 const result = () => {
   if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
     scoreP1.textContent++;
-    return console.log("Player 1 won!");
+    winnnerText = "Player 1 won!";
+    return showWinnerText(winnnerText);
   } else if (playerOne.choice === "paper" && playerTwo.choice === "scissors") {
     scoreP2.textContent++;
-    return console.log("Player 2 won!");
+    winnnerText = "Player 2";
+    return showWinnerText(winnnerText);
   } else if (playerOne.choice === "paper" && playerTwo.choice === "rock") {
     scoreP1.textContent++;
-    return console.log("Player 1 won!");
+    winnnerText = "Player 1";
+    return showWinnerText(winnnerText);
   } else if (playerOne.choice === "rock" && playerTwo.choice === "paper") {
     scoreP2.textContent++;
-    return console.log("Player 2 won!");
+    winnnerText = "Player 2";
+    return showWinnerText(winnnerText);
   } else if (playerOne.choice === "rock" && playerTwo.choice === "scissors") {
     scoreP1.textContent++;
-    return console.log("Player 1 won!");
+    winnnerText = "Player 1";
+    return showWinnerText(winnnerText);
   } else if (playerTwo.choice === "rock" && playerOne.choice === "scissors") {
     scoreP2.textContent++;
-    return console.log("Player 2 won!");
+    winnnerText = "Player 2";
+    return showWinnerText(winnnerText);
   } else {
-    return console.log("Draw!");
+    winnnerText = "draw";
+    return showWinnerText(winnnerText);
   }
 };
+
+startBtn.addEventListener("click", showPlayerChoice);
+showPopupBtn.addEventListener("click", showPopupFnt);
+hidePopupBtn.addEventListener("click", hidePopupFnt);
 
 showResult.addEventListener("click", result);
