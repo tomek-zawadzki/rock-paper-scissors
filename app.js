@@ -11,7 +11,10 @@ const popupInfo = document.querySelector(".popup-info");
 const showPopupBtn = document.querySelector(".btn-info");
 const hidePopupBtn = document.querySelector(".btn-close");
 const boxForResults = document.querySelector(".box-for-results");
+const darkBtn = document.querySelector(".btn-dark");
+const lightBtn = document.querySelector(".btn-light");
 
+let root = document.documentElement;
 let winnnerText = "";
 
 const playerOne = {
@@ -84,6 +87,18 @@ const result = () => {
     return showWinnerText(winnnerText);
   }
 };
+
+const changeToLight = () => {
+  root.style.setProperty("--first-color", "#302b63");
+  root.style.setProperty("--second-color", " rgb(238, 229, 229)");
+};
+const changeToDark = () => {
+  root.style.setProperty("--second-color", "#302b63");
+  root.style.setProperty("--first-color", " rgb(238, 229, 229)");
+};
+
+lightBtn.addEventListener("click", changeToLight);
+darkBtn.addEventListener("click", changeToDark);
 
 startBtn.addEventListener("click", showPlayerChoice);
 showPopupBtn.addEventListener("click", showPopupFnt);
