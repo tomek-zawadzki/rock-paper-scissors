@@ -16,6 +16,12 @@ const lightBtn = document.querySelector(".btn-light");
 const invtationBox = document.querySelector(".invitation");
 const settingsBox = document.querySelector(".settings-box");
 const settingBtn = document.querySelector(".settings");
+const nameP1 = document.querySelector(".player1-name");
+const nameP2 = document.querySelector(".player2-name");
+const inputNameP1 = document.querySelector(".input-name-p1");
+const inputNameP2 = document.querySelector(".input-name-p2");
+const hideSettingsBtn = document.querySelector(".settings-close");
+const setSettingsBtn = document.querySelector(".settings-set");
 
 let root = document.documentElement;
 let winnnerText = "";
@@ -36,6 +42,16 @@ const hidePopupFnt = () => {
 
 const showSettings = () => {
   settingsBox.style.display = "flex";
+};
+
+const hideSettings = () => {
+  settingsBox.style.display = "none";
+};
+
+const changeNames = () => {
+  nameP1.textContent = inputNameP1.value;
+  nameP2.textContent = inputNameP2.value;
+  hideSettings();
 };
 
 const showPlayerChoice = () => {
@@ -67,27 +83,27 @@ const showWinnerText = (text) => {
 const result = () => {
   if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
     scoreP1.textContent++;
-    winnnerText = "Player 1 won!";
+    winnnerText = `${nameP1.textContent}`;
     return showWinnerText(winnnerText);
   } else if (playerOne.choice === "paper" && playerTwo.choice === "scissors") {
     scoreP2.textContent++;
-    winnnerText = "Player 2";
+    winnnerText = `${nameP2.textContent}`;
     return showWinnerText(winnnerText);
   } else if (playerOne.choice === "paper" && playerTwo.choice === "rock") {
     scoreP1.textContent++;
-    winnnerText = "Player 1";
+    winnnerText = `${nameP1.textContent}`;
     return showWinnerText(winnnerText);
   } else if (playerOne.choice === "rock" && playerTwo.choice === "paper") {
     scoreP2.textContent++;
-    winnnerText = "Player 2";
+    winnnerText = `${nameP2.textContent}`;
     return showWinnerText(winnnerText);
   } else if (playerOne.choice === "rock" && playerTwo.choice === "scissors") {
     scoreP1.textContent++;
-    winnnerText = "Player 1";
+    winnnerText = `${nameP1.textContent}`;
     return showWinnerText(winnnerText);
   } else if (playerTwo.choice === "rock" && playerOne.choice === "scissors") {
     scoreP2.textContent++;
-    winnnerText = "Player 2";
+    winnnerText = `${nameP2.textContent}`;
     return showWinnerText(winnnerText);
   } else {
     winnnerText = "draw";
@@ -105,6 +121,8 @@ const changeToDark = () => {
 };
 
 settingBtn.addEventListener("click", showSettings);
+hideSettingsBtn.addEventListener("click", hideSettings);
+setSettingsBtn.addEventListener("click", changeNames);
 lightBtn.addEventListener("click", changeToLight);
 darkBtn.addEventListener("click", changeToDark);
 
