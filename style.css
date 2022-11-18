@@ -112,8 +112,14 @@ body {
   color: var(--second-color);
 }
 
-.settings-box {
+.set-name {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.settings-box {
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -122,13 +128,19 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--first-color);
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   border-radius: 12px;
 }
 
 .settings-box h2 {
   color: var(--second-color);
+  margin-bottom: 124px;
+}
+
+.settings-p {
+  color: var(--second-color);
+  font-size: 24px;
 }
 
 main {
@@ -137,7 +149,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 600px;
-  height: 600px;
+  height: 700px;
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 18px;
 }
