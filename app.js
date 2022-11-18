@@ -13,6 +13,8 @@ const hidePopupBtn = document.querySelector(".btn-close");
 const boxForResults = document.querySelector(".box-for-results");
 const darkBtn = document.querySelector(".btn-dark");
 const lightBtn = document.querySelector(".btn-light");
+const invtationBox = document.querySelector(".invitation");
+const settingBtn = document.querySelector(".settings");
 
 let root = document.documentElement;
 let winnnerText = "";
@@ -29,6 +31,17 @@ const showPopupFnt = () => {
 };
 const hidePopupFnt = () => {
   popupInfo.style.display = "none";
+};
+
+const showSettings = () => {
+  const settingsHtml = `
+  <div class="settings-box">
+  <h2>Settings</h2>
+  <div class="buttons-settings">
+    <button class="btn btn-dark">Dark</button>
+    <button class="btn btn-light">Light</button>
+  </div>
+  `;
 };
 
 const showPlayerChoice = () => {
@@ -91,6 +104,7 @@ const result = () => {
 const changeToLight = () => {
   root.style.setProperty("--first-color", "#302b63");
   root.style.setProperty("--second-color", " rgb(238, 229, 229)");
+  invtationBox.style.backgroundColor = "#fff";
 };
 const changeToDark = () => {
   root.style.setProperty("--second-color", "#302b63");
