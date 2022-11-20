@@ -81,6 +81,7 @@ const showWinnerText = (text) => {
 };
 
 const result = () => {
+  showWinnerText('') 
   if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
     scoreP1.textContent++;
     winnnerText = `${nameP1.textContent}`;
