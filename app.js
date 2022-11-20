@@ -81,36 +81,56 @@ const showWinnerText = (text) => {
 };
 
 const result = () => {
-  showWinnerText('') 
-  if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
-    scoreP1.textContent++;
-    winnnerText = `${nameP1.textContent}`;
-    return showWinnerText(winnnerText);
-  } else if (playerOne.choice === "paper" && playerTwo.choice === "scissors") {
-    scoreP2.textContent++;
-    winnnerText = `${nameP2.textContent}`;
-    return showWinnerText(winnnerText);
-  } else if (playerOne.choice === "paper" && playerTwo.choice === "rock") {
-    scoreP1.textContent++;
-    winnnerText = `${nameP1.textContent}`;
-    return showWinnerText(winnnerText);
-  } else if (playerOne.choice === "rock" && playerTwo.choice === "paper") {
-    scoreP2.textContent++;
-    winnnerText = `${nameP2.textContent}`;
-    return showWinnerText(winnnerText);
-  } else if (playerOne.choice === "rock" && playerTwo.choice === "scissors") {
-    scoreP1.textContent++;
-    winnnerText = `${nameP1.textContent}`;
-    return showWinnerText(winnnerText);
-  } else if (playerTwo.choice === "rock" && playerOne.choice === "scissors") {
-    scoreP2.textContent++;
-    winnnerText = `${nameP2.textContent}`;
-    return showWinnerText(winnnerText);
-  } else {
+  let rules = {
+    rock: "scissors",
+    scissors: "paper",
+    paper: "rock",
+  };
+
+  if (playerOne.choice === playerTwo.choice) {
     winnnerText = "draw";
     return showWinnerText(winnnerText);
+  } else {
+    const wynik =
+      "Player" +
+      (rules[playerOne.choice] === playerTwo.choice ? 1 : 2) +
+      " won!";
+
+    return console.log(wynik);
   }
 };
+
+// const result = () => {
+
+//   if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
+//     scoreP1.textContent++;
+//     winnnerText = `${nameP1.textContent}`;
+//     return showWinnerText(winnnerText);
+//   } else if (playerOne.choice === "paper" && playerTwo.choice === "scissors") {
+//     scoreP2.textContent++;
+//     winnnerText = `${nameP2.textContent}`;
+//     return showWinnerText(winnnerText);
+//   } else if (playerOne.choice === "paper" && playerTwo.choice === "rock") {
+//     scoreP1.textContent++;
+//     winnnerText = `${nameP1.textContent}`;
+//     return showWinnerText(winnnerText);
+//   } else if (playerOne.choice === "rock" && playerTwo.choice === "paper") {
+//     scoreP2.textContent++;
+//     winnnerText = `${nameP2.textContent}`;
+//     return showWinnerText(winnnerText);
+//   } else if (playerOne.choice === "rock" && playerTwo.choice === "scissors") {
+//     scoreP1.textContent++;
+//     winnnerText = `${nameP1.textContent}`;
+//     return showWinnerText(winnnerText);
+//   } else if (playerTwo.choice === "rock" && playerOne.choice === "scissors") {
+//     scoreP2.textContent++;
+//     winnnerText = `${nameP2.textContent}`;
+//     return showWinnerText(winnnerText);
+//   } else {
+//     winnnerText = "draw";
+//     return showWinnerText(winnnerText);
+//   }
+// };
 
 const changeToLight = () => {
   root.style.setProperty("--first-color", "#302b63");
