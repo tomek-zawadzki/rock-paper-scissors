@@ -22,9 +22,13 @@ const inputNameP1 = document.querySelector(".input-name-p1");
 const inputNameP2 = document.querySelector(".input-name-p2");
 const hideSettingsBtn = document.querySelector(".settings-close");
 const setSettingsBtn = document.querySelector(".settings-set");
+const player1El = document.querySelector(".player--1");
+const player2El = document.querySelector(".player--2");
 
 let root = document.documentElement;
 let winnnerText = "";
+let paragraph;
+let activePlayer = 0;
 
 const playerOne = {
   choice: "",
@@ -58,11 +62,16 @@ const showPlayerChoice = () => {
   choicePanel.style.display = "flex";
 };
 
+const switchPlayer = () => {
+  player1El.classList.toggle("player--active");
+  player2El.classList.toggle("player--active");
+};
+
 btnChoiceP1.forEach((e) => {
   e.addEventListener("click", () => {
     inputP1.value = e.children[1].textContent;
     playerOne.choice = e.children[1].textContent;
-    console.log(playerOne.choice);
+    switchPlayer();
   });
 });
 
@@ -70,17 +79,19 @@ btnChoiceP2.forEach((e) => {
   e.addEventListener("click", () => {
     inputP2.value = e.children[1].textContent;
     playerTwo.choice = e.children[1].textContent;
-    console.log(playerTwo.choice);
+    switchPlayer();
   });
 });
 
 const showWinnerText = (text) => {
-  const p = document.createElement("p");
-  p.innerHTML = `The winner is ${text}! 💥💥💥`;
-  boxForResults.appendChild(p);
+  // boxForResults.removeChild(boxForResults.lastChild);
+
+  const paragraph = document.createElement("p");
+  paragraph.innerHTML = `The winner is ${text}! 💥💥💥`;
+  boxForResults.appendChild(paragraph);
 };
 
-const result = () => {
+const checkResult = () => {
   let rules = {
     rock: "scissors",
     scissors: "paper",
@@ -88,49 +99,21 @@ const result = () => {
   };
 
   if (playerOne.choice === playerTwo.choice) {
-    winnnerText = "draw";
+    winnnerText = "Draw";
     return showWinnerText(winnnerText);
   } else {
-    const wynik =
-      "Player" +
-      (rules[playerOne.choice] === playerTwo.choice ? 1 : 2) +
-      " won!";
+    const result =
+      rules[playerOne.choice] === playerTwo.choice
+        ? nameP1.textContent
+        : nameP2.textContent;
 
-    return console.log(wynik);
+    result === nameP1.textContent
+      ? scoreP1.textContent++
+      : scoreP2.textContent++;
+
+    return showWinnerText(result);
   }
 };
-
-// const result = () => {
-
-//   if (playerOne.choice === "scissors" && playerTwo.choice === "paper") {
-//     scoreP1.textContent++;
-//     winnnerText = `${nameP1.textContent}`;
-//     return showWinnerText(winnnerText);
-//   } else if (playerOne.choice === "paper" && playerTwo.choice === "scissors") {
-//     scoreP2.textContent++;
-//     winnnerText = `${nameP2.textContent}`;
-//     return showWinnerText(winnnerText);
-//   } else if (playerOne.choice === "paper" && playerTwo.choice === "rock") {
-//     scoreP1.textContent++;
-//     winnnerText = `${nameP1.textContent}`;
-//     return showWinnerText(winnnerText);
-//   } else if (playerOne.choice === "rock" && playerTwo.choice === "paper") {
-//     scoreP2.textContent++;
-//     winnnerText = `${nameP2.textContent}`;
-//     return showWinnerText(winnnerText);
-//   } else if (playerOne.choice === "rock" && playerTwo.choice === "scissors") {
-//     scoreP1.textContent++;
-//     winnnerText = `${nameP1.textContent}`;
-//     return showWinnerText(winnnerText);
-//   } else if (playerTwo.choice === "rock" && playerOne.choice === "scissors") {
-//     scoreP2.textContent++;
-//     winnnerText = `${nameP2.textContent}`;
-//     return showWinnerText(winnnerText);
-//   } else {
-//     winnnerText = "draw";
-//     return showWinnerText(winnnerText);
-//   }
-// };
 
 const changeToLight = () => {
   root.style.setProperty("--first-color", "#302b63");
@@ -151,4 +134,4 @@ startBtn.addEventListener("click", showPlayerChoice);
 showPopupBtn.addEventListener("click", showPopupFnt);
 hidePopupBtn.addEventListener("click", hidePopupFnt);
 
-showResult.addEventListener("click", result);
+showResult.addEventListener("click", checkResult);

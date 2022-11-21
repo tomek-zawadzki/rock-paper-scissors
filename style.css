@@ -120,7 +120,7 @@ body {
 
 .settings-input {
   height: 24px;
-  padding: 0 6px;
+  padding: 0 6 px;
 }
 
 .settings-box {
@@ -140,7 +140,6 @@ body {
 
 .settings-box h2 {
   color: var(--second-color);
-  
 }
 
 .settings-p {
@@ -255,14 +254,21 @@ main {
   margin-top: 24px;
 }
 
-.player1 {
-  visibility: visible;
-}
-
 .player2 {
-  visibility: visible;
   border-left: 1px solid var(--second-color);
   border-right: none;
+}
+
+.player--1 {
+  visibility: hidden;
+}
+
+.player--2 {
+  visibility: hidden;
+}
+
+.player--active {
+  visibility: visible;
 }
 
 .score-p1,
