@@ -80,6 +80,7 @@ btnChoiceP2.forEach((e) => {
     inputP2.value = e.children[1].textContent;
     playerTwo.choice = e.children[1].textContent;
     switchPlayer();
+    checkResult();
   });
 });
 
@@ -87,7 +88,7 @@ const showWinnerText = (text) => {
   // boxForResults.removeChild(boxForResults.lastChild);
 
   const paragraph = document.createElement("p");
-  paragraph.innerHTML = `The winner is ${text}! 💥💥💥`;
+  paragraph.innerHTML = `Result: ${text}! 💥💥💥`;
   boxForResults.appendChild(paragraph);
 };
 
@@ -99,7 +100,6 @@ const checkResult = () => {
   };
 
   if (inputP1.value === "" || inputP2.value === "") {
-    console.log("wybierz papier nozyce lub kamień");
     const choiceError = document.createElement("p");
     choiceError.innerHTML = "Please choose paper, rock or scissors";
     boxForResults.appendChild(choiceError);
@@ -109,14 +109,13 @@ const checkResult = () => {
   } else {
     const result =
       rules[playerOne.choice] === playerTwo.choice
-        ? nameP1.textContent
-        : nameP2.textContent;
+        ? `${nameP1.textContent} won`
+        : `${nameP2.textContent} won`;
 
-    result === nameP1.textContent
+    result === `${nameP1.textContent} won`
       ? scoreP1.textContent++
       : scoreP2.textContent++;
 
-    console.log(inputP1.value);
     return showWinnerText(result);
   }
 };
@@ -142,4 +141,4 @@ startBtn.addEventListener("click", showPlayerChoice);
 showPopupBtn.addEventListener("click", showPopupFnt);
 hidePopupBtn.addEventListener("click", hidePopupFnt);
 
-showResult.addEventListener("click", checkResult);
+// showResult.addEventListener("click", checkResult);
