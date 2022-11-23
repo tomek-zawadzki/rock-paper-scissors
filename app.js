@@ -1,5 +1,7 @@
 const startBtn = document.querySelector(".start");
 const choicePanel = document.querySelector(".choice");
+const choiceTitle = document.querySelector(".choice-title");
+const rounds = document.getElementById("rounds");
 const btnChoiceP1 = document.querySelectorAll(".btn-choice-p1");
 const btnChoiceP2 = document.querySelectorAll(".btn-choice-p2");
 const showResult = document.querySelector(".show-result");
@@ -50,6 +52,7 @@ const showSettings = () => {
 
 const hideSettings = () => {
   settingsBox.style.display = "none";
+  showRoundsNum();
 };
 
 const changeNames = () => {
@@ -65,6 +68,15 @@ const showPlayerChoice = () => {
 const switchPlayer = () => {
   player1El.classList.toggle("player--active");
   player2El.classList.toggle("player--active");
+};
+
+const showRoundsNum = () => {
+  const roundsNum = document.createElement("h2");
+  roundsNum.classList.add("choice-title");
+  rounds.value != 1
+    ? (roundsNum.innerHTML = `Game to ${rounds.value} wins`)
+    : (roundsNum.innerHTML = `Game to ${rounds.value} win`);
+  choicePanel.insertAdjacentElement("afterbegin", roundsNum);
 };
 
 btnChoiceP1.forEach((e) => {

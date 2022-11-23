@@ -144,7 +144,30 @@ body {
 }
 
 .settings-box h2 {
-  color: var(--text-color);
+  color: var(--second-color);
+}
+
+.settings-rounds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--second-color);
+  gap: 12px;
+}
+
+.settings-rounds label {
+  font-size: 24px;
+}
+
+.settings-rounds select {
+  font-size: 18px;
+  height: 50px;
+  width: 60px;
+}
+
+.settings-rounds option {
+  text-align: center;
 }
 
 .settings-p {
@@ -244,6 +267,12 @@ main {
   width: 600px;
   height: 700px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.choice-title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 12px;
 }
 
 .players {
