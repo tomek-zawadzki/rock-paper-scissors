@@ -98,7 +98,12 @@ const checkResult = () => {
     paper: "rock",
   };
 
-  if (playerOne.choice === playerTwo.choice) {
+  if (inputP1.value === "" || inputP2.value === "") {
+    console.log("wybierz papier nozyce lub kamień");
+    const choiceError = document.createElement("p");
+    choiceError.innerHTML = "Please choose paper, rock or scissors";
+    boxForResults.appendChild(choiceError);
+  } else if (playerOne.choice === playerTwo.choice) {
     winnnerText = "Draw";
     return showWinnerText(winnnerText);
   } else {
@@ -111,17 +116,20 @@ const checkResult = () => {
       ? scoreP1.textContent++
       : scoreP2.textContent++;
 
+    console.log(inputP1.value);
     return showWinnerText(result);
   }
 };
 
 const changeToLight = () => {
-  root.style.setProperty("--first-color", "#302b63");
-  root.style.setProperty("--second-color", " rgb(238, 229, 229)");
+  root.style.setProperty("--first-color", "#94D1BE");
+  root.style.setProperty("--second-color", "#fff");
+  root.style.setProperty("--text-color", "#3B413C");
 };
 const changeToDark = () => {
   root.style.setProperty("--second-color", "#302b63");
   root.style.setProperty("--first-color", " rgb(238, 229, 229)");
+  root.style.setProperty("--text-color", "rgb(143, 172, 205)");
 };
 
 settingBtn.addEventListener("click", showSettings);
