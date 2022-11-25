@@ -368,3 +368,10 @@ main {
   visibility: visible;
   font-size: 24px;
 }
+
+.result-text {
+  display: none;
+  text-align: center;
+  font-size: 32px;
+  color: var(--second-color);
+}

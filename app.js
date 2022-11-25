@@ -26,9 +26,12 @@ const hideSettingsBtn = document.querySelector(".settings-close");
 const setSettingsBtn = document.querySelector(".settings-set");
 const player1El = document.querySelector(".player--1");
 const player2El = document.querySelector(".player--2");
+const resultTextBox = document.querySelector(".result-text");
+const resultText = document.querySelector(".result-text--js");
 
 let root = document.documentElement;
 let winnnerText = "";
+let roundPlayerWinner = "";
 let paragraph;
 let activePlayer = 0;
 
@@ -37,6 +40,17 @@ const playerOne = {
 };
 const playerTwo = {
   choice: "",
+};
+
+const changeToLight = () => {
+  root.style.setProperty("--first-color", "#94D1BE");
+  root.style.setProperty("--second-color", "#fff");
+  root.style.setProperty("--text-color", "#3B413C");
+};
+const changeToDark = () => {
+  root.style.setProperty("--second-color", "#302b63");
+  root.style.setProperty("--first-color", " rgb(238, 229, 229)");
+  root.style.setProperty("--text-color", "rgb(143, 172, 205)");
 };
 
 const showPopupFnt = () => {
@@ -96,6 +110,11 @@ btnChoiceP2.forEach((e) => {
   });
 });
 
+const showResultText = (winner) => {
+  resultTextBox.style.display = "block";
+  resultText.textContent = `${winner}`;
+};
+
 const showWinnerText = (text) => {
   // boxForResults.removeChild(boxForResults.lastChild);
 
@@ -117,9 +136,10 @@ const checkResult = () => {
     boxForResults.appendChild(choiceError);
   } else if (playerOne.choice === playerTwo.choice) {
     winnnerText = "Draw";
-    return showWinnerText(winnnerText);
+    let result = "Draw!";
+    return showResultText(result);
   } else {
-    const result =
+    result =
       rules[playerOne.choice] === playerTwo.choice
         ? `${nameP1.textContent} won`
         : `${nameP2.textContent} won`;
@@ -127,29 +147,19 @@ const checkResult = () => {
     result === `${nameP1.textContent} won`
       ? scoreP1.textContent++
       : scoreP2.textContent++;
+    console.log(result);
 
-    return showWinnerText(result);
+    return showResultText(result);
   }
 };
 
-const changeToLight = () => {
-  root.style.setProperty("--first-color", "#94D1BE");
-  root.style.setProperty("--second-color", "#fff");
-  root.style.setProperty("--text-color", "#3B413C");
-};
-const changeToDark = () => {
-  root.style.setProperty("--second-color", "#302b63");
-  root.style.setProperty("--first-color", " rgb(238, 229, 229)");
-  root.style.setProperty("--text-color", "rgb(143, 172, 205)");
-};
-
+startBtn.addEventListener("click", showPlayerChoice);
 settingBtn.addEventListener("click", showSettings);
 hideSettingsBtn.addEventListener("click", hideSettings);
 setSettingsBtn.addEventListener("click", changeNames);
 lightBtn.addEventListener("click", changeToLight);
 darkBtn.addEventListener("click", changeToDark);
 
-startBtn.addEventListener("click", showPlayerChoice);
 showPopupBtn.addEventListener("click", showPopupFnt);
 hidePopupBtn.addEventListener("click", hidePopupFnt);
 
