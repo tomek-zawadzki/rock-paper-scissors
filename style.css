@@ -259,6 +259,7 @@ main {
 
 .choice {
   display: none;
+  align-items: center;
   flex-direction: column;
   position: absolute;
   background-color: var(--first-color);
@@ -273,6 +274,12 @@ main {
   text-align: center;
   font-size: 32px;
   margin-top: 12px;
+}
+
+.back {
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 
 .players {
@@ -296,6 +303,7 @@ main {
 .player2 {
   border-left: 1px solid var(--second-color);
   border-right: none;
+  margin-bottom: 40px;
 }
 
 .player--1 {
@@ -315,23 +323,23 @@ main {
   font-size: 86px;
 }
 
-.show-result-box {
+.rounds-results-box {
   display: flex;
   justify-content: center;
 }
 
-.show-result {
+.show-rounds-results-btn {
   font-size: 20px;
   padding: 8px;
   border-radius: 8px;
   background-color: var(--second-color);
   color: var(--first-color);
   border: 1px solid var(--second-color);
-  margin-top: 16px;
+  margin-bottom: 32px;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
-.show-result:hover {
+.show-rounds-results-btn:hover {
   background-color: var(--first-color);
   color: var(--second-color);
   border: 1px solid var(--second-color);
@@ -370,8 +378,20 @@ main {
 }
 
 .result-text {
-  display: none;
+  visibility: hidden;
   text-align: center;
   font-size: 32px;
   color: var(--second-color);
+}
+
+.rounds-history {
+  display: none;
+  flex-direction: column;
+  margin-bottom: -300px;
+  min-width: 200px;
+  min-height: 50px;
+  background-color: var(--first-color);
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 22px;
 }

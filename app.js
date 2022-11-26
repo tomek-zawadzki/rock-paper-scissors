@@ -28,10 +28,13 @@ const player1El = document.querySelector(".player--1");
 const player2El = document.querySelector(".player--2");
 const resultTextBox = document.querySelector(".result-text");
 const resultText = document.querySelector(".result-text--js");
+const backBtn = document.querySelector(".back");
+const roundNum = document.querySelector(".round-number");
+const roundsHistory = document.querySelector(".rounds-history");
+const showRoundsResultsBtn = document.querySelector(".show-rounds-results-btn");
 
 let root = document.documentElement;
 let winnnerText = "";
-let roundPlayerWinner = "";
 let paragraph;
 let activePlayer = 0;
 
@@ -66,17 +69,29 @@ const showSettings = () => {
 
 const hideSettings = () => {
   settingsBox.style.display = "none";
-  showRoundsNum();
 };
 
 const changeNames = () => {
   nameP1.textContent = inputNameP1.value;
   nameP2.textContent = inputNameP2.value;
+  showRoundsNum();
   hideSettings();
+};
+
+const showRoundsHistory = () => {
+  roundsHistory.style.display = "flex";
 };
 
 const showPlayerChoice = () => {
   choicePanel.style.display = "flex";
+};
+
+const hidePlayerChoice = () => {
+  choicePanel.style.display = "none";
+  scoreP1.textContent = 0;
+  scoreP2.textContent = 0;
+  roundNum.value = 0;
+  resultTextBox.style.visibility = "hidden";
 };
 
 const switchPlayer = () => {
@@ -105,22 +120,21 @@ btnChoiceP2.forEach((e) => {
   e.addEventListener("click", () => {
     inputP2.value = e.children[1].textContent;
     playerTwo.choice = e.children[1].textContent;
+    roundNum.textContent++;
     switchPlayer();
     checkResult();
   });
 });
 
 const showResultText = (winner) => {
-  resultTextBox.style.display = "block";
+  resultTextBox.style.visibility = "visible";
   resultText.textContent = `${winner}`;
 };
 
 const showWinnerText = (text) => {
-  // boxForResults.removeChild(boxForResults.lastChild);
-
   const paragraph = document.createElement("p");
-  paragraph.innerHTML = `Result: ${text}! 💥💥💥`;
-  boxForResults.appendChild(paragraph);
+  paragraph.innerHTML = `Round ${roundNum.textContent}: ${text}!`;
+  roundsHistory.appendChild(paragraph);
 };
 
 const checkResult = () => {
@@ -130,37 +144,32 @@ const checkResult = () => {
     paper: "rock",
   };
 
-  if (inputP1.value === "" || inputP2.value === "") {
-    const choiceError = document.createElement("p");
-    choiceError.innerHTML = "Please choose paper, rock or scissors";
-    boxForResults.appendChild(choiceError);
-  } else if (playerOne.choice === playerTwo.choice) {
+  if (playerOne.choice === playerTwo.choice) {
     winnnerText = "Draw";
     let result = "Draw!";
+    showWinnerText(result);
     return showResultText(result);
   } else {
     result =
       rules[playerOne.choice] === playerTwo.choice
-        ? `${nameP1.textContent} won`
-        : `${nameP2.textContent} won`;
+        ? `${nameP1.textContent} won!`
+        : `${nameP2.textContent} won!`;
 
-    result === `${nameP1.textContent} won`
+    result === `${nameP1.textContent} won!`
       ? scoreP1.textContent++
       : scoreP2.textContent++;
-    console.log(result);
-
+    showWinnerText(result);
     return showResultText(result);
   }
 };
 
 startBtn.addEventListener("click", showPlayerChoice);
+backBtn.addEventListener("click", hidePlayerChoice);
 settingBtn.addEventListener("click", showSettings);
 hideSettingsBtn.addEventListener("click", hideSettings);
 setSettingsBtn.addEventListener("click", changeNames);
 lightBtn.addEventListener("click", changeToLight);
 darkBtn.addEventListener("click", changeToDark);
-
 showPopupBtn.addEventListener("click", showPopupFnt);
 hidePopupBtn.addEventListener("click", hidePopupFnt);
-
-// showResult.addEventListener("click", checkResult);
+showRoundsResultsBtn.addEventListener("click", showRoundsHistory);
