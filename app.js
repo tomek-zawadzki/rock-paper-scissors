@@ -106,8 +106,8 @@ const showRoundsNum = () => {
   const roundsNum = document.createElement("h2");
   roundsNum.classList.add("choice-title");
   rounds.value != 1
-    ? (roundsNum.innerHTML = `Game to ${rounds.value} wins`)
-    : (roundsNum.innerHTML = `Game to ${rounds.value} win`);
+    ? (roundsNum.innerHTML = `Game to ${rounds.value} points`)
+    : (roundsNum.innerHTML = `Game to ${rounds.value} point`);
   choicePanel.insertAdjacentElement("afterbegin", roundsNum);
 };
 
@@ -172,13 +172,13 @@ const finalWinner = () => {
     scoreP1.textContent === rounds.value ||
     scoreP2.textContent === rounds.value
   )
-    console.log(
-      `The winner is ${
-        scoreP1.textContent > scoreP2.textContent
-          ? nameP1.textContent
-          : nameP2.textContent
-      }`
-    );
+    if (scoreP1.textContent > scoreP2.textContent) {
+      console.log(scoreP1.textContent);
+      nameP1.textContent = nameP1.textContent + " WINNER !!!";
+    } else {
+      console.log(scoreP2.textContent);
+      nameP2.textContent = nameP2.textContent + " WINNER !!!";
+    }
 };
 
 startBtn.addEventListener("click", showPlayerChoice);
@@ -186,7 +186,6 @@ backBtn.addEventListener("click", hidePlayerChoice);
 settingBtn.addEventListener("click", showSettings);
 hideSettingsBtn.addEventListener("click", hideSettings);
 setSettingsBtn.addEventListener("click", changeNames);
-
 showPopupBtn.addEventListener("click", showPopupFnt);
 hidePopupBtn.addEventListener("click", hidePopupFnt);
 showRoundsResultsBtn.addEventListener("click", showRoundsHistory);
