@@ -5,12 +5,9 @@
 }
 
 :root {
-  --first-color: rgb(143, 172, 205);
-  --second-color: #181441;
-  --third-color: rgb(238, 229, 229);
-  --fourth-color: rgb(153, 194, 238);
-  --text-light: rgb(179, 164, 84);
-  --text-color: rgb(143, 172, 205);
+  --first-color: #90a4ae;
+  --second-color: #222222;
+  --text-color: #075589;
 }
 
 body {
@@ -77,11 +74,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  color: var(--second-color);
+  color: var(--first-color);
   border: 1px solid var(--second-color);
   padding: 16px;
   border-radius: 8px;
   z-index: 99;
+  gap: 4px;
 }
 
 .popup-info h2 {
@@ -93,6 +91,7 @@ body {
 .sign-info {
   display: flex;
   margin-bottom: 8px;
+  gap: 8px;
 }
 .btn-close-box {
   display: flex;
@@ -250,6 +249,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--text-color);
 }
 
 .signs-icon i {
@@ -303,7 +303,7 @@ main {
 .player2 {
   border-left: 1px solid var(--second-color);
   border-right: none;
-  margin-bottom: 40px;
+  margin-bottom: 18px;
 }
 
 .player--1 {
@@ -336,6 +336,7 @@ main {
   color: var(--first-color);
   border: 1px solid var(--second-color);
   margin-bottom: 32px;
+  margin-top: 24px;
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
@@ -369,19 +370,11 @@ main {
   font-size: 28px;
 }
 
-.box-for-results {
-  text-align: center;
-  height: 60px;
-  padding: 10px 0;
-  visibility: visible;
-  font-size: 24px;
-}
-
 .result-text {
   visibility: hidden;
   text-align: center;
   font-size: 32px;
-  color: var(--second-color);
+  color: var(--text-color);
 }
 
 .rounds-history {
@@ -394,4 +387,5 @@ main {
   padding: 16px;
   border-radius: 8px;
   font-size: 22px;
+  overflow: scroll;
 }

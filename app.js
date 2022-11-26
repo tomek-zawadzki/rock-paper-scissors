@@ -46,15 +46,18 @@ const playerTwo = {
 };
 
 const changeToLight = () => {
-  root.style.setProperty("--first-color", "#94D1BE");
+  root.style.setProperty("--first-color", "#018786");
   root.style.setProperty("--second-color", "#fff");
-  root.style.setProperty("--text-color", "#3B413C");
+  root.style.setProperty("--text-color", "#0f60b6");
 };
 const changeToDark = () => {
-  root.style.setProperty("--second-color", "#302b63");
-  root.style.setProperty("--first-color", " rgb(238, 229, 229)");
-  root.style.setProperty("--text-color", "rgb(143, 172, 205)");
+  root.style.setProperty("--second-color", "#222222");
+  root.style.setProperty("--first-color", "#90a4ae");
+  root.style.setProperty("--text-color", "#075589");
 };
+
+lightBtn.addEventListener("click", changeToLight);
+darkBtn.addEventListener("click", changeToDark);
 
 const showPopupFnt = () => {
   popupInfo.style.display = "flex";
@@ -123,6 +126,7 @@ btnChoiceP2.forEach((e) => {
     roundNum.textContent++;
     switchPlayer();
     checkResult();
+    finalWinner();
   });
 });
 
@@ -163,13 +167,26 @@ const checkResult = () => {
   }
 };
 
+const finalWinner = () => {
+  if (
+    scoreP1.textContent === rounds.value ||
+    scoreP2.textContent === rounds.value
+  )
+    console.log(
+      `The winner is ${
+        scoreP1.textContent > scoreP2.textContent
+          ? nameP1.textContent
+          : nameP2.textContent
+      }`
+    );
+};
+
 startBtn.addEventListener("click", showPlayerChoice);
 backBtn.addEventListener("click", hidePlayerChoice);
 settingBtn.addEventListener("click", showSettings);
 hideSettingsBtn.addEventListener("click", hideSettings);
 setSettingsBtn.addEventListener("click", changeNames);
-lightBtn.addEventListener("click", changeToLight);
-darkBtn.addEventListener("click", changeToDark);
+
 showPopupBtn.addEventListener("click", showPopupFnt);
 hidePopupBtn.addEventListener("click", hidePopupFnt);
 showRoundsResultsBtn.addEventListener("click", showRoundsHistory);
