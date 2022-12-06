@@ -29,6 +29,8 @@ const player2El = document.querySelector(".player--2");
 const resultTextBox = document.querySelector(".result-text");
 const resultText = document.querySelector(".result-text--js");
 const backBtn = document.querySelector(".back");
+const gameRoundsText = document.querySelector(".chice-title");
+const numberOfRounds = document.querySelector(".pick-number-round");
 const roundNum = document.querySelector(".round-number");
 const roundsHistory = document.querySelector(".rounds-history");
 const showRoundsResultsBtn = document.querySelector(".show-rounds-results-btn");
@@ -74,6 +76,14 @@ const hideSettings = () => {
   settingsBox.style.display = "none";
 };
 
+const showRoundsNum = () => {
+  numberOfRounds.textContent = rounds.value;
+
+  rounds.value != 1
+    ? (gameRoundsText.innerHTML = `Game to ${rounds.value} points`)
+    : (gameRoundsText.innerHTML = `Game to ${rounds.value} point`);
+};
+
 const changeNames = () => {
   nameP1.textContent = inputNameP1.value;
   nameP2.textContent = inputNameP2.value;
@@ -100,15 +110,6 @@ const hidePlayerChoice = () => {
 const switchPlayer = () => {
   player1El.classList.toggle("player--active");
   player2El.classList.toggle("player--active");
-};
-
-const showRoundsNum = () => {
-  const roundsNum = document.createElement("h2");
-  roundsNum.classList.add("choice-title");
-  rounds.value != 1
-    ? (roundsNum.innerHTML = `Game to ${rounds.value} points`)
-    : (roundsNum.innerHTML = `Game to ${rounds.value} point`);
-  choicePanel.insertAdjacentElement("afterbegin", roundsNum);
 };
 
 btnChoiceP1.forEach((e) => {
